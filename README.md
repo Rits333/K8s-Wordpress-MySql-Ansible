@@ -7,7 +7,7 @@ Configuring K8s Cluster ,Wordpress or Master and Exposing the Wordpress pod usin
 
 <img src="/image/jjji.gif" width="300" height="150">  <img src="/image/mysql.gif" width="200" height="150">
 
-<img src="/image/www.gif" width="300" height="150">  <img src="/image/aws.gif" width="300" height="150">  
+<img src="/image/www.gif" width="270" height="150">  <img src="/image/aws.gif" width="285" height="150">  
 
 <h4>File Require</h4>
 1.In This we Require the .pem file to login to IAM.
