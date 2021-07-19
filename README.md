@@ -7,7 +7,7 @@ Configuring K8s Cluster ,Wordpress or Master and Exposing the Wordpress pod usin
 
 <img src="/image/jjji.gif" width="300" height="150">  <img src="/image/mysql.gif" width="200" height="150">
 
-<img src="/images/www.gif" width="300" height="150">  <img src="/images/aws.gif" width="300" height="150">  
+<img src="/image/www.gif" width="300" height="150">  <img src="/image/aws.gif" width="300" height="150">  
 
 <h4>File Require</h4>
 1.In This we Require the .pem file to login to IAM.
@@ -24,5 +24,5 @@ Configuring K8s Cluster ,Wordpress or Master and Exposing the Wordpress pod usin
  
  Also in this we used the Wordpress so please check the cidr range given whether it is matching with flannel in k8s cluster if not then change it accordingly in my case i change it to 10.244.0.0 check before lauching because of this we are unable to connect wordpress to our Database
  
- <h2>Hopeyou like it </h2.
+ <h2>Hope you like it </h2.
  <h2>Thank you !!!😊😊😊</h2>
