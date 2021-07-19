@@ -1,0 +1,19 @@
+---
+# tasks file for ec2
+- name: launching ec2 instance
+  ec2:
+          image: "{{ image }}"
+          instance_type: "{{ instance_type }}"
+          region: "{{ region }}"
+          vpc_subnet_id: "{{ vpc_subnet_id }}"
+          group: "{{ security_group }}"
+          aws_access_key: "{{ ackey }}"
+          aws_secret_key: "{{ skey }}"
+          key_name: test.pem
+          state: present
+          wait: yes
+          count: 1
+          instance_tags:
+                       Name: "{{ item }}" 
+  loop: "{{ os_names }}"    
+

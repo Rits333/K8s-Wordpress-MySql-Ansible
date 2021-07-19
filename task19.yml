@@ -1,0 +1,49 @@
+- name: creating ec2
+  hosts: localhost
+  vars_files:
+          - /root/k8/main.yml
+  tasks:
+          - name: Launch EC2 Instance For Setting Up Kubernetes Master Node.
+            ec2:
+                    key_name: "{{ key }}"
+                    instance_type: "{{instance_type}}"
+                    image: "{{ image }}"
+                    wait: yes
+                    count: 1
+                    vpc_subnet_id: "{{ vpc_subnet_id }}"
+                    region: "{{ region }}"
+                    state: present
+                    group_id: "{{ security_group }}"
+                    assign_public_ip: yes
+                    instance_tags:
+                            Name: "Master"                       
+                    aws_access_key: "{{ackey}}"
+                    aws_secret_key: "{{ skey }}"
+            register: Master
+
+          - name: Launch EC2 Instance For Setting Up Kubernetes Slave.
+            ec2:
+                    key_name: "{{ key }}"
+                    instance_type: "{{ instance_type }}"
+                    image: "{{ image }}"
+                    wait: yes
+                    count: 1
+                    vpc_subnet_id: "{{ vpc_subnet_id }}"
+                    region: "{{ region }}"
+                    state: present
+                    group_id: "{{ security_group }}"
+                    assign_public_ip: yes
+                    instance_tags:
+                            Name: "Slave"
+                    aws_access_key: "{{ackey}}"
+                    aws_secret_key: "{{skey}}" 
+            register: Slave                                                                                                                               
+          - name: Update Inventory File
+            blockinfile:
+                    dest: "/root/k8/inventory"
+                    block: |
+                            [Master]
+                            {{ Master.instances[0].public_ip }} ansible_ssh_user=ec2-user ansible_ssh_private_key_file=/root/k8/test.pem
+                          
+                            [Slave]
+                            {{ Slave.instances[0].public_ip }} ansible_ssh_user=ec2-user ansible_ssh_private_key_file=/root/k8/test.pem

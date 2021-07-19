@@ -1,0 +1,1 @@
+kubeadm join 172.31.35.194:6443 --token mugh8p.r6r6oe9rlsu0apl5 --discovery-token-ca-cert-hash sha256:a7f7ffaf80904b1885ba7dc423ce8d07b269df097cd870ec5cbd0137ad853c88 

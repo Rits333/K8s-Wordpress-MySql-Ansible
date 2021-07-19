@@ -1,0 +1,20 @@
+---
+# vars file for ec2
+
+image: "ami-011c99152163a87ae"
+instance_type: "t2.micro"
+region: "ap-south-1"
+key: test
+vpc_subnet_id: "subnet-931118fb"
+security_group: "sg-0dea734c8fe48eb26"
+os_names:
+      - "Master_Node"
+      - "Slave_Node"
+      - "Slave_Node"
+
+register:
+        - "Master_Node"
+        - "Slave_Node"
+        - "Slave_Node"
+ackey: Access key
+skey: secret key

@@ -1,0 +1,15 @@
+- hosts: Master
+  roles:
+         - name: "Configuring Master"
+           role: "master"
+
+- hosts: Slave
+  roles: 
+          - name: "Configuring Slave"
+            role: "slave"
+
+
+- hosts: Master
+  roles:
+          - name: "Configure Wordpress"
+            role: "wqsql"

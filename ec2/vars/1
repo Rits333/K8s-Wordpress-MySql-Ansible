@@ -1,0 +1,17 @@
+---
+# vars file for ec2
+
+image:
+instance_type: "t2.micro"
+region: "ap-souh-1"
+key: test
+vpc_subnet_id: "subnet-931118fb"
+security_group: "sg-90f02ef7"
+os_names:
+        - "K8s_master"
+        - "K8s_slave1"
+        - "K8s_slave2"
+
+
+ackey: AKIAUFCOTRMFPQZBWX7Z
+skey: MH9Z+rNNuUjIITJM9PIBP8qZPMRaQjDr+1YYddfZ
