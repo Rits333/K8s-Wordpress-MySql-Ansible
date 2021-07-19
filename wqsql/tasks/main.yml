@@ -8,7 +8,7 @@
     var: "Wordpress.stdout_lines"
 
 - name: "Launching MySql"
-  shell: "kubectl run mydb1 --image=mysql:5.7 --env=MYSQL_ROOT_PASSWORD=Ritesh     --env=MYSQL_DATABASE=wpdb  --env=MYSQL_USER=ritesh  --env=MYSQL_PASSWORD=Ritesh"
+  shell: "kubectl run mydb1 --image=mysql:5.7 --env=MYSQL_ROOT_PASSWORD=passord     --env=MYSQL_DATABASE=wpdb  --env=MYSQL_USER=username  --env=MYSQL_PASSWORD=password"
   register: MySql
 
 - debug:
