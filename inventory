@@ -4,8 +4,8 @@
 
 # BEGIN ANSIBLE MANAGED BLOCK
 [Master]
-65.2.148.129 ansible_ssh_user=ec2-user ansible_ssh_private_key_file=/root/k8/test.pem
+masterip ansible_ssh_user=ec2-user ansible_ssh_private_key_file= path of file .pem
 
 [Slave]
-13.126.90.77 ansible_ssh_user=ec2-user ansible_ssh_private_key_file=/root/k8/test.pem
+Slave ip ansible_ssh_user=ec2-user ansible_ssh_private_key_file=path of file .pem
 # END ANSIBLE MANAGED BLOCK
